@@ -1,0 +1,316 @@
+2012/06/26 09:06:54 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "GII".' in /var/www/yii/framework/web/CWebApplication.php:280
+Stack trace:
+#0 /var/www/yii/framework/web/CWebApplication.php(135): CWebApplication->runController('GII')
+#1 /var/www/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#2 /var/www/testdrive/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/testdrive/index.php/GII
+---
+2012/06/27 09:06:27 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "LandMaster".' in /var/www/yii/framework/web/CWebApplication.php:280
+Stack trace:
+#0 /var/www/yii/framework/web/CWebApplication.php(135): CWebApplication->runController('LandMaster')
+#1 /var/www/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#2 /var/www/testdrive/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/testdrive/index.php/LandMaster
+---
+2012/06/27 18:20:31 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "Area".' in /var/www/yii/framework/web/CWebApplication.php:280
+Stack trace:
+#0 /var/www/yii/framework/web/CWebApplication.php(135): CWebApplication->runController('Area')
+#1 /var/www/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#2 /var/www/testdrive/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/testdrive/index.php/Area
+---
+2012/06/27 18:25:01 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry '1' for key 'Land_ID'. The SQL statement executed was: INSERT INTO `LandDetails` (`Land_ID`, `Direction`, `Dimension`, `Description`) VALUES (:yp0, :yp1, :yp2, :yp3).
+in /var/www/testdrive/protected/controllers/LandDetailsController.php (72)
+in /var/www/testdrive/index.php (13)
+2012/06/27 18:25:01 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry '1' for key 'Land_ID'. The SQL statement executed was: INSERT INTO `LandDetails` (`Land_ID`, `Direction`, `Dimension`, `Description`) VALUES (:yp0, :yp1, :yp2, :yp3)' in /var/www/yii/framework/db/CDbCommand.php:354
+Stack trace:
+#0 /var/www/yii/framework/db/ar/CActiveRecord.php(1014): CDbCommand->execute()
+#1 /var/www/yii/framework/db/ar/CActiveRecord.php(787): CActiveRecord->insert(NULL)
+#2 /var/www/testdrive/protected/controllers/LandDetailsController.php(72): CActiveRecord->save()
+#3 /var/www/yii/framework/web/actions/CInlineAction.php(50): LandDetailsController->actionCreate()
+#4 /var/www/yii/framework/web/CController.php(309): CInlineAction->runWithParams(Array)
+#5 /var/www/yii/framework/web/filters/CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#6 /var/www/yii/framework/web/filters/CFilter.php(41): CFilterChain->run()
+#7 /var/www/yii/framework/web/CController.php(1146): CFilter->filter(Object(CFilterChain))
+#8 /var/www/yii/framework/web/filters/CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#9 /var/www/yii/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#10 /var/www/yii/framework/web/CController.php(292): CFilterChain->run()
+#11 /var/www/yii/framework/web/CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 /var/www/yii/framework/web/CWebApplication.php(276): CController->run('create')
+#13 /var/www/yii/framework/web/CWebApplication.php(135): CWebApplication->runController('landDetails/cre...')
+#14 /var/www/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#15 /var/www/testdrive/index.php(13): CApplication->run()
+#16 {main}
+REQUEST_URI=/testdrive/index.php/landDetails/create
+HTTP_REFERER=http://localhost/testdrive/index.php/landDetails/create
+---
+2012/06/27 18:28:28 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry '1' for key 'Land_ID'. The SQL statement executed was: INSERT INTO `LandDetails` (`Land_ID`, `Direction`, `Dimension`, `Description`) VALUES (:yp0, :yp1, :yp2, :yp3).
+in /var/www/testdrive/protected/controllers/LandDetailsController.php (72)
+in /var/www/testdrive/index.php (13)
+2012/06/27 18:28:28 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry '1' for key 'Land_ID'. The SQL statement executed was: INSERT INTO `LandDetails` (`Land_ID`, `Direction`, `Dimension`, `Description`) VALUES (:yp0, :yp1, :yp2, :yp3)' in /var/www/yii/framework/db/CDbCommand.php:354
+Stack trace:
+#0 /var/www/yii/framework/db/ar/CActiveRecord.php(1014): CDbCommand->execute()
+#1 /var/www/yii/framework/db/ar/CActiveRecord.php(787): CActiveRecord->insert(NULL)
+#2 /var/www/testdrive/protected/controllers/LandDetailsController.php(72): CActiveRecord->save()
+#3 /var/www/yii/framework/web/actions/CInlineAction.php(50): LandDetailsController->actionCreate()
+#4 /var/www/yii/framework/web/CController.php(309): CInlineAction->runWithParams(Array)
+#5 /var/www/yii/framework/web/filters/CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#6 /var/www/yii/framework/web/filters/CFilter.php(41): CFilterChain->run()
+#7 /var/www/yii/framework/web/CController.php(1146): CFilter->filter(Object(CFilterChain))
+#8 /var/www/yii/framework/web/filters/CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#9 /var/www/yii/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#10 /var/www/yii/framework/web/CController.php(292): CFilterChain->run()
+#11 /var/www/yii/framework/web/CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 /var/www/yii/framework/web/CWebApplication.php(276): CController->run('create')
+#13 /var/www/yii/framework/web/CWebApplication.php(135): CWebApplication->runController('landDetails/cre...')
+#14 /var/www/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#15 /var/www/testdrive/index.php(13): CApplication->run()
+#16 {main}
+REQUEST_URI=/testdrive/index.php/landDetails/create
+HTTP_REFERER=http://localhost/testdrive/index.php/landDetails/create
+---
+2012/06/27 18:34:30 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`landproperty`.`LandDetails`, CONSTRAINT `LandDetails_ibfk_1` FOREIGN KEY (`Land_ID`) REFERENCES `LandMaster` (`Land_ID`)). The SQL statement executed was: INSERT INTO `LandDetails` (`Land_ID`, `Direction`, `Dimension`, `Description`) VALUES (:yp0, :yp1, :yp2, :yp3).
+in /var/www/testdrive/protected/controllers/LandDetailsController.php (72)
+in /var/www/testdrive/index.php (13)
+2012/06/27 18:34:30 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`landproperty`.`LandDetails`, CONSTRAINT `LandDetails_ibfk_1` FOREIGN KEY (`Land_ID`) REFERENCES `LandMaster` (`Land_ID`)). The SQL statement executed was: INSERT INTO `LandDetails` (`Land_ID`, `Direction`, `Dimension`, `Description`) VALUES (:yp0, :yp1, :yp2, :yp3)' in /var/www/yii/framework/db/CDbCommand.php:354
+Stack trace:
+#0 /var/www/yii/framework/db/ar/CActiveRecord.php(1014): CDbCommand->execute()
+#1 /var/www/yii/framework/db/ar/CActiveRecord.php(787): CActiveRecord->insert(NULL)
+#2 /var/www/testdrive/protected/controllers/LandDetailsController.php(72): CActiveRecord->save()
+#3 /var/www/yii/framework/web/actions/CInlineAction.php(50): LandDetailsController->actionCreate()
+#4 /var/www/yii/framework/web/CController.php(309): CInlineAction->runWithParams(Array)
+#5 /var/www/yii/framework/web/filters/CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#6 /var/www/yii/framework/web/filters/CFilter.php(41): CFilterChain->run()
+#7 /var/www/yii/framework/web/CController.php(1146): CFilter->filter(Object(CFilterChain))
+#8 /var/www/yii/framework/web/filters/CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#9 /var/www/yii/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#10 /var/www/yii/framework/web/CController.php(292): CFilterChain->run()
+#11 /var/www/yii/framework/web/CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 /var/www/yii/framework/web/CWebApplication.php(276): CController->run('create')
+#13 /var/www/yii/framework/web/CWebApplication.php(135): CWebApplication->runController('landDetails/cre...')
+#14 /var/www/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#15 /var/www/testdrive/index.php(13): CApplication->run()
+#16 {main}
+REQUEST_URI=/testdrive/index.php/landDetails/create
+HTTP_REFERER=http://localhost/testdrive/index.php/landDetails/create
+---
+2012/06/27 18:35:12 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry '1' for key 'Land_ID'. The SQL statement executed was: INSERT INTO `LandDetails` (`Land_ID`, `Direction`, `Dimension`, `Description`) VALUES (:yp0, :yp1, :yp2, :yp3).
+in /var/www/testdrive/protected/controllers/LandDetailsController.php (72)
+in /var/www/testdrive/index.php (13)
+2012/06/27 18:35:12 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry '1' for key 'Land_ID'. The SQL statement executed was: INSERT INTO `LandDetails` (`Land_ID`, `Direction`, `Dimension`, `Description`) VALUES (:yp0, :yp1, :yp2, :yp3)' in /var/www/yii/framework/db/CDbCommand.php:354
+Stack trace:
+#0 /var/www/yii/framework/db/ar/CActiveRecord.php(1014): CDbCommand->execute()
+#1 /var/www/yii/framework/db/ar/CActiveRecord.php(787): CActiveRecord->insert(NULL)
+#2 /var/www/testdrive/protected/controllers/LandDetailsController.php(72): CActiveRecord->save()
+#3 /var/www/yii/framework/web/actions/CInlineAction.php(50): LandDetailsController->actionCreate()
+#4 /var/www/yii/framework/web/CController.php(309): CInlineAction->runWithParams(Array)
+#5 /var/www/yii/framework/web/filters/CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#6 /var/www/yii/framework/web/filters/CFilter.php(41): CFilterChain->run()
+#7 /var/www/yii/framework/web/CController.php(1146): CFilter->filter(Object(CFilterChain))
+#8 /var/www/yii/framework/web/filters/CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#9 /var/www/yii/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#10 /var/www/yii/framework/web/CController.php(292): CFilterChain->run()
+#11 /var/www/yii/framework/web/CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 /var/www/yii/framework/web/CWebApplication.php(276): CController->run('create')
+#13 /var/www/yii/framework/web/CWebApplication.php(135): CWebApplication->runController('landDetails/cre...')
+#14 /var/www/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#15 /var/www/testdrive/index.php(13): CApplication->run()
+#16 {main}
+REQUEST_URI=/testdrive/index.php/landDetails/create
+HTTP_REFERER=http://localhost/testdrive/index.php/landDetails/create
+---
+2012/06/27 18:45:24 [warning] [application] Failed to set unsafe attribute "LandDetailID" of "LandDetails".
+in /var/www/testdrive/protected/controllers/LandDetailsController.php (144)
+in /var/www/testdrive/index.php (13)
+2012/06/27 18:45:28 [warning] [application] Failed to set unsafe attribute "LandDetailID" of "LandDetails".
+in /var/www/testdrive/protected/controllers/LandDetailsController.php (144)
+in /var/www/testdrive/index.php (13)
+2012/06/27 18:45:31 [warning] [application] Failed to set unsafe attribute "LandDetailID" of "LandDetails".
+in /var/www/testdrive/protected/controllers/LandDetailsController.php (144)
+in /var/www/testdrive/index.php (13)
+2012/06/27 18:45:34 [warning] [application] Failed to set unsafe attribute "LandDetailID" of "LandDetails".
+in /var/www/testdrive/protected/controllers/LandDetailsController.php (144)
+in /var/www/testdrive/index.php (13)
+2012/06/27 18:45:38 [warning] [application] Failed to set unsafe attribute "LandDetailID" of "LandDetails".
+in /var/www/testdrive/protected/controllers/LandDetailsController.php (144)
+in /var/www/testdrive/index.php (13)
+2012/06/27 18:46:31 [warning] [application] Failed to set unsafe attribute "CustomerNameArabic" of "CustomerMaster".
+in /var/www/testdrive/protected/controllers/CustomerMasterController.php (71)
+in /var/www/testdrive/index.php (13)
+2012/06/27 18:46:31 [warning] [application] Failed to set unsafe attribute "CustomerNameEnglish" of "CustomerMaster".
+in /var/www/testdrive/protected/controllers/CustomerMasterController.php (71)
+in /var/www/testdrive/index.php (13)
+2012/06/27 18:46:31 [warning] [application] Failed to set unsafe attribute "HomeAddress" of "CustomerMaster".
+in /var/www/testdrive/protected/controllers/CustomerMasterController.php (71)
+in /var/www/testdrive/index.php (13)
+2012/06/27 18:46:31 [warning] [application] Failed to set unsafe attribute "HomePhone" of "CustomerMaster".
+in /var/www/testdrive/protected/controllers/CustomerMasterController.php (71)
+in /var/www/testdrive/index.php (13)
+2012/06/27 18:46:31 [warning] [application] Failed to set unsafe attribute "MobilePhone" of "CustomerMaster".
+in /var/www/testdrive/protected/controllers/CustomerMasterController.php (71)
+in /var/www/testdrive/index.php (13)
+2012/06/27 18:46:31 [warning] [application] Failed to set unsafe attribute "DateofBirth" of "CustomerMaster".
+in /var/www/testdrive/protected/controllers/CustomerMasterController.php (71)
+in /var/www/testdrive/index.php (13)
+2012/06/27 18:46:31 [warning] [application] Failed to set unsafe attribute "Signature" of "CustomerMaster".
+in /var/www/testdrive/protected/controllers/CustomerMasterController.php (71)
+in /var/www/testdrive/index.php (13)
+2012/06/27 18:46:31 [error] [exception.CException] exception 'CException' with message 'Property "CustomerMaster.HomePh" is not defined.' in /var/www/yii/framework/base/CComponent.php:131
+Stack trace:
+#0 /var/www/yii/framework/db/ar/CActiveRecord.php(144): CComponent->__get('HomePh')
+#1 /var/www/yii/framework/validators/CNumberValidator.php(79): CActiveRecord->__get('HomePh')
+#2 /var/www/yii/framework/validators/CValidator.php(197): CNumberValidator->validateAttribute(Object(CustomerMaster), 'HomePh')
+#3 /var/www/yii/framework/base/CModel.php(158): CValidator->validate(Object(CustomerMaster), NULL)
+#4 /var/www/yii/framework/db/ar/CActiveRecord.php(786): CModel->validate(NULL)
+#5 /var/www/testdrive/protected/controllers/CustomerMasterController.php(72): CActiveRecord->save()
+#6 /var/www/yii/framework/web/actions/CInlineAction.php(50): CustomerMasterController->actionCreate()
+#7 /var/www/yii/framework/web/CController.php(309): CInlineAction->runWithParams(Array)
+#8 /var/www/yii/framework/web/filters/CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#9 /var/www/yii/framework/web/filters/CFilter.php(41): CFilterChain->run()
+#10 /var/www/yii/framework/web/CController.php(1146): CFilter->filter(Object(CFilterChain))
+#11 /var/www/yii/framework/web/filters/CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#12 /var/www/yii/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#13 /var/www/yii/framework/web/CController.php(292): CFilterChain->run()
+#14 /var/www/yii/framework/web/CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#15 /var/www/yii/framework/web/CWebApplication.php(276): CController->run('create')
+#16 /var/www/yii/framework/web/CWebApplication.php(135): CWebApplication->runController('customerMaster/...')
+#17 /var/www/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#18 /var/www/testdrive/index.php(13): CApplication->run()
+#19 {main}
+REQUEST_URI=/testdrive/index.php/customerMaster/create
+HTTP_REFERER=http://localhost/testdrive/index.php/customerMaster/create
+---
+2012/06/27 18:47:29 [warning] [application] Failed to set unsafe attribute "CustomerNameArabic" of "CustomerMaster".
+in /var/www/testdrive/protected/controllers/CustomerMasterController.php (71)
+in /var/www/testdrive/index.php (13)
+2012/06/27 18:47:29 [warning] [application] Failed to set unsafe attribute "CustomerNameEnglish" of "CustomerMaster".
+in /var/www/testdrive/protected/controllers/CustomerMasterController.php (71)
+in /var/www/testdrive/index.php (13)
+2012/06/27 18:47:29 [warning] [application] Failed to set unsafe attribute "HomeAddress" of "CustomerMaster".
+in /var/www/testdrive/protected/controllers/CustomerMasterController.php (71)
+in /var/www/testdrive/index.php (13)
+2012/06/27 18:47:29 [warning] [application] Failed to set unsafe attribute "HomePhone" of "CustomerMaster".
+in /var/www/testdrive/protected/controllers/CustomerMasterController.php (71)
+in /var/www/testdrive/index.php (13)
+2012/06/27 18:47:29 [warning] [application] Failed to set unsafe attribute "MobilePhone" of "CustomerMaster".
+in /var/www/testdrive/protected/controllers/CustomerMasterController.php (71)
+in /var/www/testdrive/index.php (13)
+2012/06/27 18:47:29 [warning] [application] Failed to set unsafe attribute "DateofBirth" of "CustomerMaster".
+in /var/www/testdrive/protected/controllers/CustomerMasterController.php (71)
+in /var/www/testdrive/index.php (13)
+2012/06/27 18:47:29 [warning] [application] Failed to set unsafe attribute "Signature" of "CustomerMaster".
+in /var/www/testdrive/protected/controllers/CustomerMasterController.php (71)
+in /var/www/testdrive/index.php (13)
+2012/06/27 18:47:29 [error] [exception.CException] exception 'CException' with message 'Property "CustomerMaster.HomePh" is not defined.' in /var/www/yii/framework/base/CComponent.php:131
+Stack trace:
+#0 /var/www/yii/framework/db/ar/CActiveRecord.php(144): CComponent->__get('HomePh')
+#1 /var/www/yii/framework/validators/CNumberValidator.php(79): CActiveRecord->__get('HomePh')
+#2 /var/www/yii/framework/validators/CValidator.php(197): CNumberValidator->validateAttribute(Object(CustomerMaster), 'HomePh')
+#3 /var/www/yii/framework/base/CModel.php(158): CValidator->validate(Object(CustomerMaster), NULL)
+#4 /var/www/yii/framework/db/ar/CActiveRecord.php(786): CModel->validate(NULL)
+#5 /var/www/testdrive/protected/controllers/CustomerMasterController.php(72): CActiveRecord->save()
+#6 /var/www/yii/framework/web/actions/CInlineAction.php(50): CustomerMasterController->actionCreate()
+#7 /var/www/yii/framework/web/CController.php(309): CInlineAction->runWithParams(Array)
+#8 /var/www/yii/framework/web/filters/CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#9 /var/www/yii/framework/web/filters/CFilter.php(41): CFilterChain->run()
+#10 /var/www/yii/framework/web/CController.php(1146): CFilter->filter(Object(CFilterChain))
+#11 /var/www/yii/framework/web/filters/CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#12 /var/www/yii/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#13 /var/www/yii/framework/web/CController.php(292): CFilterChain->run()
+#14 /var/www/yii/framework/web/CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#15 /var/www/yii/framework/web/CWebApplication.php(276): CController->run('create')
+#16 /var/www/yii/framework/web/CWebApplication.php(135): CWebApplication->runController('customerMaster/...')
+#17 /var/www/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#18 /var/www/testdrive/index.php(13): CApplication->run()
+#19 {main}
+REQUEST_URI=/testdrive/index.php/customerMaster/create
+HTTP_REFERER=http://localhost/testdrive/index.php/customerMaster/create
+---
+2012/06/27 18:49:53 [error] [exception.CException] exception 'CException' with message 'Property "CustomerMaster.CustomerNameAr" is not defined.' in /var/www/yii/framework/base/CComponent.php:131
+Stack trace:
+#0 /var/www/yii/framework/db/ar/CActiveRecord.php(144): CComponent->__get('CustomerNameAr')
+#1 /var/www/testdrive/protected/models/CustomerMaster.php(111): CActiveRecord->__get('CustomerNameAr')
+#2 /var/www/testdrive/protected/views/customerMaster/admin.php(42): CustomerMaster->search()
+#3 /var/www/yii/framework/web/CBaseController.php(127): require('/var/www/testdr...')
+#4 /var/www/yii/framework/web/CBaseController.php(96): CBaseController->renderInternal('/var/www/testdr...', Array, true)
+#5 /var/www/yii/framework/web/CController.php(870): CBaseController->renderFile('/var/www/testdr...', Array, true)
+#6 /var/www/yii/framework/web/CController.php(783): CController->renderPartial('admin', Array, true)
+#7 /var/www/testdrive/protected/controllers/CustomerMasterController.php(148): CController->render('admin', Array)
+#8 /var/www/yii/framework/web/actions/CInlineAction.php(50): CustomerMasterController->actionAdmin()
+#9 /var/www/yii/framework/web/CController.php(309): CInlineAction->runWithParams(Array)
+#10 /var/www/yii/framework/web/filters/CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#11 /var/www/yii/framework/web/filters/CFilter.php(41): CFilterChain->run()
+#12 /var/www/yii/framework/web/CController.php(1146): CFilter->filter(Object(CFilterChain))
+#13 /var/www/yii/framework/web/filters/CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#14 /var/www/yii/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#15 /var/www/yii/framework/web/CController.php(292): CFilterChain->run()
+#16 /var/www/yii/framework/web/CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#17 /var/www/yii/framework/web/CWebApplication.php(276): CController->run('admin')
+#18 /var/www/yii/framework/web/CWebApplication.php(135): CWebApplication->runController('customerMaster/...')
+#19 /var/www/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#20 /var/www/testdrive/index.php(13): CApplication->run()
+#21 {main}
+REQUEST_URI=/testdrive/index.php/customerMaster/admin
+HTTP_REFERER=http://localhost/testdrive/index.php/customerMaster/create
+---
+2012/06/27 18:53:27 [error] [exception.CException] exception 'CException' with message 'Property "ContractsMaster.ID" is not defined.' in /var/www/yii/framework/base/CComponent.php:131
+Stack trace:
+#0 /var/www/yii/framework/db/ar/CActiveRecord.php(144): CComponent->__get('ID')
+#1 /var/www/yii/framework/validators/CNumberValidator.php(79): CActiveRecord->__get('ID')
+#2 /var/www/yii/framework/validators/CValidator.php(197): CNumberValidator->validateAttribute(Object(ContractsMaster), 'ID')
+#3 /var/www/yii/framework/base/CModel.php(158): CValidator->validate(Object(ContractsMaster), NULL)
+#4 /var/www/yii/framework/db/ar/CActiveRecord.php(786): CModel->validate(NULL)
+#5 /var/www/testdrive/protected/controllers/ContractsMasterController.php(72): CActiveRecord->save()
+#6 /var/www/yii/framework/web/actions/CInlineAction.php(50): ContractsMasterController->actionCreate()
+#7 /var/www/yii/framework/web/CController.php(309): CInlineAction->runWithParams(Array)
+#8 /var/www/yii/framework/web/filters/CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#9 /var/www/yii/framework/web/filters/CFilter.php(41): CFilterChain->run()
+#10 /var/www/yii/framework/web/CController.php(1146): CFilter->filter(Object(CFilterChain))
+#11 /var/www/yii/framework/web/filters/CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#12 /var/www/yii/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#13 /var/www/yii/framework/web/CController.php(292): CFilterChain->run()
+#14 /var/www/yii/framework/web/CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#15 /var/www/yii/framework/web/CWebApplication.php(276): CController->run('create')
+#16 /var/www/yii/framework/web/CWebApplication.php(135): CWebApplication->runController('contractsMaster...')
+#17 /var/www/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#18 /var/www/testdrive/index.php(13): CApplication->run()
+#19 {main}
+REQUEST_URI=/testdrive/index.php/contractsMaster/create
+HTTP_REFERER=http://localhost/testdrive/index.php/contractsMaster/create
+---
+2012/06/27 18:55:18 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "contractsDetails".' in /var/www/yii/framework/web/CWebApplication.php:280
+Stack trace:
+#0 /var/www/yii/framework/web/CWebApplication.php(135): CWebApplication->runController('contractsDetail...')
+#1 /var/www/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#2 /var/www/testdrive/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/testdrive/index.php/contractsDetails
+---
+2012/06/27 18:55:52 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`landproperty`.`ContractsDetail`, CONSTRAINT `ContractsDetail_ibfk_2` FOREIGN KEY (`CustomerID`) REFERENCES `CustomerMaster` (`CustomerID`)). The SQL statement executed was: INSERT INTO `ContractsDetail` (`ContractID`, `Type`, `CustomerID`, `Share`) VALUES (:yp0, :yp1, :yp2, :yp3).
+in /var/www/testdrive/protected/controllers/ContractsDetailController.php (72)
+in /var/www/testdrive/index.php (13)
+2012/06/27 18:55:52 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`landproperty`.`ContractsDetail`, CONSTRAINT `ContractsDetail_ibfk_2` FOREIGN KEY (`CustomerID`) REFERENCES `CustomerMaster` (`CustomerID`)). The SQL statement executed was: INSERT INTO `ContractsDetail` (`ContractID`, `Type`, `CustomerID`, `Share`) VALUES (:yp0, :yp1, :yp2, :yp3)' in /var/www/yii/framework/db/CDbCommand.php:354
+Stack trace:
+#0 /var/www/yii/framework/db/ar/CActiveRecord.php(1014): CDbCommand->execute()
+#1 /var/www/yii/framework/db/ar/CActiveRecord.php(787): CActiveRecord->insert(NULL)
+#2 /var/www/testdrive/protected/controllers/ContractsDetailController.php(72): CActiveRecord->save()
+#3 /var/www/yii/framework/web/actions/CInlineAction.php(50): ContractsDetailController->actionCreate()
+#4 /var/www/yii/framework/web/CController.php(309): CInlineAction->runWithParams(Array)
+#5 /var/www/yii/framework/web/filters/CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#6 /var/www/yii/framework/web/filters/CFilter.php(41): CFilterChain->run()
+#7 /var/www/yii/framework/web/CController.php(1146): CFilter->filter(Object(CFilterChain))
+#8 /var/www/yii/framework/web/filters/CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#9 /var/www/yii/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#10 /var/www/yii/framework/web/CController.php(292): CFilterChain->run()
+#11 /var/www/yii/framework/web/CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 /var/www/yii/framework/web/CWebApplication.php(276): CController->run('create')
+#13 /var/www/yii/framework/web/CWebApplication.php(135): CWebApplication->runController('contractsDetail...')
+#14 /var/www/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#15 /var/www/testdrive/index.php(13): CApplication->run()
+#16 {main}
+REQUEST_URI=/testdrive/index.php/contractsDetail/create
+HTTP_REFERER=http://localhost/testdrive/index.php/contractsDetail/create
+---

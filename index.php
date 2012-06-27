@@ -1,5 +1,6 @@
 <?php
-
+//Master change here.
+//Master!
 // change the following paths if necessary
 // I added this line for git to recognize
 $yii=dirname(__FILE__).'/../yii/framework/yii.php';

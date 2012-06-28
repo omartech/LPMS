@@ -1,12 +1,5 @@
 <?php
-<<<<<<< HEAD
-//Master change here.
-//Master!
-=======
-//More changes here in the experimental branch
->>>>>>> experimental
 // change the following paths if necessary
-// I added this line for git to recognize
 $yii=dirname(__FILE__).'/../yii/framework/yii.php';
 $config=dirname(__FILE__).'/protected/config/main.php';
 

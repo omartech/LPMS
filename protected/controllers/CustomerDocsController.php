@@ -64,7 +64,7 @@ class CustomerDocsController extends Controller
 		$model=new CustomerDocs;
 
 		// Uncomment the following line if AJAX validation is needed
-		// $this->performAjaxValidation($model);
+		$this->performAjaxValidation($model);
 
 		if(isset($_POST['CustomerDocs']))
 		{

@@ -48,6 +48,31 @@ class LandMasterController extends Controller
 	 * Displays a particular model.
 	 * @param integer $id the ID of the model to be displayed
 	 */
+
+public function actionOmar()
+{
+    $model=new LandMaster;
+
+    // uncomment the following code to enable ajax-based validation
+    /*
+    if(isset($_POST['ajax']) && $_POST['ajax']==='land-master-omar-form')
+    {
+        echo CActiveForm::validate($model);
+        Yii::app()->end();
+    }
+    */
+
+    if(isset($_POST['LandMaster']))
+    {
+        $model->attributes=$_POST['LandMaster'];
+        if($model->validate())
+        {
+            // form inputs are valid, do something here
+            return;
+        }
+    }
+    $this->render('omar',array('model'=>$model));
+}
 	public function actionView($id)
 	{
 		$this->render('view',array(

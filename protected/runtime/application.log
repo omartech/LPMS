@@ -314,3 +314,326 @@ Stack trace:
 REQUEST_URI=/testdrive/index.php/contractsDetail/create
 HTTP_REFERER=http://localhost/testdrive/index.php/contractsDetail/create
 ---
+2012/06/28 09:18:15 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'landproperty.tbl_user' doesn't exist. The SQL statement executed was: SHOW COLUMNS FROM `tbl_user`.
+in /var/www/testdrive/index.php (12)
+2012/06/28 09:46:36 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`landproperty`.`CustomerDocs`, CONSTRAINT `CustomerDocs_ibfk_1` FOREIGN KEY (`CustomerID`) REFERENCES `CustomerMaster` (`CustomerID`)). The SQL statement executed was: INSERT INTO `CustomerDocs` (`CustomerID`, `DocType`, `DocNumber`, `IssueDate`, `ExpiryDate`, `DocImage`) VALUES (:yp0, :yp1, :yp2, :yp3, :yp4, :yp5).
+in /var/www/testdrive/protected/controllers/CustomerDocsController.php (72)
+in /var/www/testdrive/index.php (12)
+2012/06/28 09:46:36 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`landproperty`.`CustomerDocs`, CONSTRAINT `CustomerDocs_ibfk_1` FOREIGN KEY (`CustomerID`) REFERENCES `CustomerMaster` (`CustomerID`)). The SQL statement executed was: INSERT INTO `CustomerDocs` (`CustomerID`, `DocType`, `DocNumber`, `IssueDate`, `ExpiryDate`, `DocImage`) VALUES (:yp0, :yp1, :yp2, :yp3, :yp4, :yp5)' in /var/www/yii/framework/db/CDbCommand.php:354
+Stack trace:
+#0 /var/www/yii/framework/db/ar/CActiveRecord.php(1014): CDbCommand->execute()
+#1 /var/www/yii/framework/db/ar/CActiveRecord.php(787): CActiveRecord->insert(NULL)
+#2 /var/www/testdrive/protected/controllers/CustomerDocsController.php(72): CActiveRecord->save()
+#3 /var/www/yii/framework/web/actions/CInlineAction.php(50): CustomerDocsController->actionCreate()
+#4 /var/www/yii/framework/web/CController.php(309): CInlineAction->runWithParams(Array)
+#5 /var/www/yii/framework/web/filters/CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#6 /var/www/yii/framework/web/filters/CFilter.php(41): CFilterChain->run()
+#7 /var/www/yii/framework/web/CController.php(1146): CFilter->filter(Object(CFilterChain))
+#8 /var/www/yii/framework/web/filters/CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#9 /var/www/yii/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#10 /var/www/yii/framework/web/CController.php(292): CFilterChain->run()
+#11 /var/www/yii/framework/web/CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 /var/www/yii/framework/web/CWebApplication.php(276): CController->run('create')
+#13 /var/www/yii/framework/web/CWebApplication.php(135): CWebApplication->runController('customerDocs/cr...')
+#14 /var/www/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#15 /var/www/testdrive/index.php(12): CApplication->run()
+#16 {main}
+REQUEST_URI=/testdrive/index.php/customerDocs/create
+HTTP_REFERER=http://localhost/testdrive/index.php/customerDocs/create
+---
+2012/06/30 01:58:25 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "contractsDetails".' in /var/www/yii/framework/web/CWebApplication.php:280
+Stack trace:
+#0 /var/www/yii/framework/web/CWebApplication.php(135): CWebApplication->runController('contractsDetail...')
+#1 /var/www/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#2 /var/www/testdrive/index.php(12): CApplication->run()
+#3 {main}
+REQUEST_URI=/testdrive/index.php/contractsDetails
+---
+2012/06/30 01:59:24 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`landproperty`.`ContractsDetail`, CONSTRAINT `ContractsDetail_ibfk_2` FOREIGN KEY (`CustomerID`) REFERENCES `CustomerMaster` (`CustomerID`)). The SQL statement executed was: INSERT INTO `ContractsDetail` (`ContractID`, `Type`, `CustomerID`, `Share`) VALUES (:yp0, :yp1, :yp2, :yp3).
+in /var/www/testdrive/protected/controllers/ContractsDetailController.php (72)
+in /var/www/testdrive/index.php (12)
+2012/06/30 01:59:24 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`landproperty`.`ContractsDetail`, CONSTRAINT `ContractsDetail_ibfk_2` FOREIGN KEY (`CustomerID`) REFERENCES `CustomerMaster` (`CustomerID`)). The SQL statement executed was: INSERT INTO `ContractsDetail` (`ContractID`, `Type`, `CustomerID`, `Share`) VALUES (:yp0, :yp1, :yp2, :yp3)' in /var/www/yii/framework/db/CDbCommand.php:354
+Stack trace:
+#0 /var/www/yii/framework/db/ar/CActiveRecord.php(1014): CDbCommand->execute()
+#1 /var/www/yii/framework/db/ar/CActiveRecord.php(787): CActiveRecord->insert(NULL)
+#2 /var/www/testdrive/protected/controllers/ContractsDetailController.php(72): CActiveRecord->save()
+#3 /var/www/yii/framework/web/actions/CInlineAction.php(50): ContractsDetailController->actionCreate()
+#4 /var/www/yii/framework/web/CController.php(309): CInlineAction->runWithParams(Array)
+#5 /var/www/yii/framework/web/filters/CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#6 /var/www/yii/framework/web/filters/CFilter.php(41): CFilterChain->run()
+#7 /var/www/yii/framework/web/CController.php(1146): CFilter->filter(Object(CFilterChain))
+#8 /var/www/yii/framework/web/filters/CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#9 /var/www/yii/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#10 /var/www/yii/framework/web/CController.php(292): CFilterChain->run()
+#11 /var/www/yii/framework/web/CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 /var/www/yii/framework/web/CWebApplication.php(276): CController->run('create')
+#13 /var/www/yii/framework/web/CWebApplication.php(135): CWebApplication->runController('contractsDetail...')
+#14 /var/www/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#15 /var/www/testdrive/index.php(12): CApplication->run()
+#16 {main}
+REQUEST_URI=/testdrive/index.php/contractsDetail/create
+HTTP_REFERER=http://localhost/testdrive/index.php/contractsDetail/create
+---
+2012/07/01 07:51:03 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'landproperty.tbl_user' doesn't exist. The SQL statement executed was: SHOW COLUMNS FROM `tbl_user`.
+in /var/www/testdrive/protected/controllers/UserController.php (130)
+in /var/www/testdrive/index.php (12)
+2012/07/01 07:51:03 [error] [exception.CDbException] exception 'CDbException' with message 'The table "tbl_user" for active record class "User" cannot be found in the database.' in /var/www/yii/framework/db/ar/CActiveRecord.php:2264
+Stack trace:
+#0 /var/www/yii/framework/db/ar/CActiveRecord.php(379): CActiveRecordMetaData->__construct(Object(User))
+#1 /var/www/yii/framework/web/CActiveDataProvider.php(75): CActiveRecord::model('User')
+#2 /var/www/testdrive/protected/controllers/UserController.php(130): CActiveDataProvider->__construct('User')
+#3 /var/www/yii/framework/web/actions/CInlineAction.php(50): UserController->actionIndex()
+#4 /var/www/yii/framework/web/CController.php(309): CInlineAction->runWithParams(Array)
+#5 /var/www/yii/framework/web/filters/CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#6 /var/www/yii/framework/web/filters/CFilter.php(41): CFilterChain->run()
+#7 /var/www/yii/framework/web/CController.php(1146): CFilter->filter(Object(CFilterChain))
+#8 /var/www/yii/framework/web/filters/CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#9 /var/www/yii/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#10 /var/www/yii/framework/web/CController.php(292): CFilterChain->run()
+#11 /var/www/yii/framework/web/CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 /var/www/yii/framework/web/CWebApplication.php(276): CController->run('')
+#13 /var/www/yii/framework/web/CWebApplication.php(135): CWebApplication->runController('User')
+#14 /var/www/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#15 /var/www/testdrive/index.php(12): CApplication->run()
+#16 {main}
+REQUEST_URI=/testdrive/index.php/User
+---
+2012/07/01 07:51:33 [error] [exception.CException] exception 'CException' with message 'Property "MortgageMaster.id" is not defined.' in /var/www/yii/framework/base/CComponent.php:131
+Stack trace:
+#0 /var/www/yii/framework/db/ar/CActiveRecord.php(144): CComponent->__get('id')
+#1 /var/www/testdrive/protected/models/MortgageMaster.php(96): CActiveRecord->__get('id')
+#2 /var/www/testdrive/protected/views/mortgageMaster/admin.php(42): MortgageMaster->search()
+#3 /var/www/yii/framework/web/CBaseController.php(127): require('/var/www/testdr...')
+#4 /var/www/yii/framework/web/CBaseController.php(96): CBaseController->renderInternal('/var/www/testdr...', Array, true)
+#5 /var/www/yii/framework/web/CController.php(870): CBaseController->renderFile('/var/www/testdr...', Array, true)
+#6 /var/www/yii/framework/web/CController.php(783): CController->renderPartial('admin', Array, true)
+#7 /var/www/testdrive/protected/controllers/MortgageMasterController.php(148): CController->render('admin', Array)
+#8 /var/www/yii/framework/web/actions/CInlineAction.php(50): MortgageMasterController->actionAdmin()
+#9 /var/www/yii/framework/web/CController.php(309): CInlineAction->runWithParams(Array)
+#10 /var/www/yii/framework/web/filters/CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#11 /var/www/yii/framework/web/filters/CFilter.php(41): CFilterChain->run()
+#12 /var/www/yii/framework/web/CController.php(1146): CFilter->filter(Object(CFilterChain))
+#13 /var/www/yii/framework/web/filters/CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#14 /var/www/yii/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#15 /var/www/yii/framework/web/CController.php(292): CFilterChain->run()
+#16 /var/www/yii/framework/web/CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#17 /var/www/yii/framework/web/CWebApplication.php(276): CController->run('admin')
+#18 /var/www/yii/framework/web/CWebApplication.php(135): CWebApplication->runController('mortgageMaster/...')
+#19 /var/www/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#20 /var/www/testdrive/index.php(12): CApplication->run()
+#21 {main}
+REQUEST_URI=/testdrive/index.php/mortgageMaster/admin
+HTTP_REFERER=http://localhost/testdrive/index.php/site/login
+---
+2012/07/01 07:57:25 [warning] [application] Failed to set unsafe attribute "MortgageID" of "MortgageDetails".
+in /var/www/testdrive/protected/controllers/MortgageDetailsController.php (71)
+in /var/www/testdrive/index.php (12)
+2012/07/01 07:57:25 [warning] [application] Failed to set unsafe attribute "PeriodOfTime" of "MortgageDetails".
+in /var/www/testdrive/protected/controllers/MortgageDetailsController.php (71)
+in /var/www/testdrive/index.php (12)
+2012/07/01 07:57:25 [warning] [application] Failed to set unsafe attribute "FeesCharged" of "MortgageDetails".
+in /var/www/testdrive/protected/controllers/MortgageDetailsController.php (71)
+in /var/www/testdrive/index.php (12)
+2012/07/01 07:57:25 [error] [exception.CException] exception 'CException' with message 'Property "MortgageDetails.id" is not defined.' in /var/www/yii/framework/base/CComponent.php:131
+Stack trace:
+#0 /var/www/yii/framework/db/ar/CActiveRecord.php(144): CComponent->__get('id')
+#1 /var/www/yii/framework/validators/CNumberValidator.php(79): CActiveRecord->__get('id')
+#2 /var/www/yii/framework/validators/CValidator.php(197): CNumberValidator->validateAttribute(Object(MortgageDetails), 'id')
+#3 /var/www/yii/framework/base/CModel.php(158): CValidator->validate(Object(MortgageDetails), NULL)
+#4 /var/www/yii/framework/db/ar/CActiveRecord.php(786): CModel->validate(NULL)
+#5 /var/www/testdrive/protected/controllers/MortgageDetailsController.php(72): CActiveRecord->save()
+#6 /var/www/yii/framework/web/actions/CInlineAction.php(50): MortgageDetailsController->actionCreate()
+#7 /var/www/yii/framework/web/CController.php(309): CInlineAction->runWithParams(Array)
+#8 /var/www/yii/framework/web/filters/CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#9 /var/www/yii/framework/web/filters/CFilter.php(41): CFilterChain->run()
+#10 /var/www/yii/framework/web/CController.php(1146): CFilter->filter(Object(CFilterChain))
+#11 /var/www/yii/framework/web/filters/CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#12 /var/www/yii/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#13 /var/www/yii/framework/web/CController.php(292): CFilterChain->run()
+#14 /var/www/yii/framework/web/CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#15 /var/www/yii/framework/web/CWebApplication.php(276): CController->run('create')
+#16 /var/www/yii/framework/web/CWebApplication.php(135): CWebApplication->runController('mortgageDetails...')
+#17 /var/www/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#18 /var/www/testdrive/index.php(12): CApplication->run()
+#19 {main}
+REQUEST_URI=/testdrive/index.php/mortgageDetails/create
+HTTP_REFERER=http://localhost/testdrive/index.php/mortgageDetails/create
+---
+2012/07/01 07:58:01 [warning] [application] Failed to set unsafe attribute "MortgageID" of "MortgageDetails".
+in /var/www/testdrive/protected/controllers/MortgageDetailsController.php (71)
+in /var/www/testdrive/index.php (12)
+2012/07/01 07:58:01 [warning] [application] Failed to set unsafe attribute "PeriodOfTime" of "MortgageDetails".
+in /var/www/testdrive/protected/controllers/MortgageDetailsController.php (71)
+in /var/www/testdrive/index.php (12)
+2012/07/01 07:58:01 [warning] [application] Failed to set unsafe attribute "FeesCharged" of "MortgageDetails".
+in /var/www/testdrive/protected/controllers/MortgageDetailsController.php (71)
+in /var/www/testdrive/index.php (12)
+2012/07/01 07:58:01 [error] [exception.CException] exception 'CException' with message 'Property "MortgageDetails.id" is not defined.' in /var/www/yii/framework/base/CComponent.php:131
+Stack trace:
+#0 /var/www/yii/framework/db/ar/CActiveRecord.php(144): CComponent->__get('id')
+#1 /var/www/yii/framework/validators/CNumberValidator.php(79): CActiveRecord->__get('id')
+#2 /var/www/yii/framework/validators/CValidator.php(197): CNumberValidator->validateAttribute(Object(MortgageDetails), 'id')
+#3 /var/www/yii/framework/base/CModel.php(158): CValidator->validate(Object(MortgageDetails), NULL)
+#4 /var/www/yii/framework/db/ar/CActiveRecord.php(786): CModel->validate(NULL)
+#5 /var/www/testdrive/protected/controllers/MortgageDetailsController.php(72): CActiveRecord->save()
+#6 /var/www/yii/framework/web/actions/CInlineAction.php(50): MortgageDetailsController->actionCreate()
+#7 /var/www/yii/framework/web/CController.php(309): CInlineAction->runWithParams(Array)
+#8 /var/www/yii/framework/web/filters/CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#9 /var/www/yii/framework/web/filters/CFilter.php(41): CFilterChain->run()
+#10 /var/www/yii/framework/web/CController.php(1146): CFilter->filter(Object(CFilterChain))
+#11 /var/www/yii/framework/web/filters/CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#12 /var/www/yii/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#13 /var/www/yii/framework/web/CController.php(292): CFilterChain->run()
+#14 /var/www/yii/framework/web/CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#15 /var/www/yii/framework/web/CWebApplication.php(276): CController->run('create')
+#16 /var/www/yii/framework/web/CWebApplication.php(135): CWebApplication->runController('mortgageDetails...')
+#17 /var/www/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#18 /var/www/testdrive/index.php(12): CApplication->run()
+#19 {main}
+REQUEST_URI=/testdrive/index.php/mortgageDetails/create
+HTTP_REFERER=http://localhost/testdrive/index.php/mortgageDetails/create
+---
+2012/07/01 07:59:36 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`landproperty`.`MortgageDetails`, CONSTRAINT `MortgageDetails_ibfk_1` FOREIGN KEY (`MortgageID`) REFERENCES `MortgageMaster` (`MortgageID`)). The SQL statement executed was: INSERT INTO `MortgageDetails` (`MortgageID`, `TotalAmount`, `Mortgager`, `PeriodOfTime`, `DateCreated`, `DateClosed`, `FeesCharged`) VALUES (:yp0, :yp1, :yp2, :yp3, :yp4, :yp5, :yp6).
+in /var/www/testdrive/protected/controllers/MortgageDetailsController.php (72)
+in /var/www/testdrive/index.php (12)
+2012/07/01 07:59:36 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`landproperty`.`MortgageDetails`, CONSTRAINT `MortgageDetails_ibfk_1` FOREIGN KEY (`MortgageID`) REFERENCES `MortgageMaster` (`MortgageID`)). The SQL statement executed was: INSERT INTO `MortgageDetails` (`MortgageID`, `TotalAmount`, `Mortgager`, `PeriodOfTime`, `DateCreated`, `DateClosed`, `FeesCharged`) VALUES (:yp0, :yp1, :yp2, :yp3, :yp4, :yp5, :yp6)' in /var/www/yii/framework/db/CDbCommand.php:354
+Stack trace:
+#0 /var/www/yii/framework/db/ar/CActiveRecord.php(1014): CDbCommand->execute()
+#1 /var/www/yii/framework/db/ar/CActiveRecord.php(787): CActiveRecord->insert(NULL)
+#2 /var/www/testdrive/protected/controllers/MortgageDetailsController.php(72): CActiveRecord->save()
+#3 /var/www/yii/framework/web/actions/CInlineAction.php(50): MortgageDetailsController->actionCreate()
+#4 /var/www/yii/framework/web/CController.php(309): CInlineAction->runWithParams(Array)
+#5 /var/www/yii/framework/web/filters/CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#6 /var/www/yii/framework/web/filters/CFilter.php(41): CFilterChain->run()
+#7 /var/www/yii/framework/web/CController.php(1146): CFilter->filter(Object(CFilterChain))
+#8 /var/www/yii/framework/web/filters/CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#9 /var/www/yii/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#10 /var/www/yii/framework/web/CController.php(292): CFilterChain->run()
+#11 /var/www/yii/framework/web/CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 /var/www/yii/framework/web/CWebApplication.php(276): CController->run('create')
+#13 /var/www/yii/framework/web/CWebApplication.php(135): CWebApplication->runController('mortgageDetails...')
+#14 /var/www/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#15 /var/www/testdrive/index.php(12): CApplication->run()
+#16 {main}
+REQUEST_URI=/testdrive/index.php/mortgageDetails/create
+HTTP_REFERER=http://localhost/testdrive/index.php/mortgageDetails/create
+---
+2012/07/01 08:22:00 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not authorized to perform this action.' in /var/www/yii/framework/web/auth/CAccessControlFilter.php:157
+Stack trace:
+#0 /var/www/yii/framework/web/auth/CAccessControlFilter.php(120): CAccessControlFilter->accessDenied(Object(CWebUser), 'You are not aut...')
+#1 /var/www/yii/framework/web/filters/CFilter.php(39): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 /var/www/yii/framework/web/CController.php(1146): CFilter->filter(Object(CFilterChain))
+#3 /var/www/yii/framework/web/filters/CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#4 /var/www/yii/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#5 /var/www/yii/framework/web/CController.php(292): CFilterChain->run()
+#6 /var/www/yii/framework/web/CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 /var/www/yii/framework/web/CWebApplication.php(276): CController->run('omar')
+#8 /var/www/yii/framework/web/CWebApplication.php(135): CWebApplication->runController('LandMaster/omar')
+#9 /var/www/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#10 /var/www/testdrive/index.php(12): CApplication->run()
+#11 {main}
+REQUEST_URI=/testdrive/index.php/LandMaster/omar
+HTTP_REFERER=http://localhost/testdrive/index.php/site/login
+---
+2012/07/01 08:22:06 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not authorized to perform this action.' in /var/www/yii/framework/web/auth/CAccessControlFilter.php:157
+Stack trace:
+#0 /var/www/yii/framework/web/auth/CAccessControlFilter.php(120): CAccessControlFilter->accessDenied(Object(CWebUser), 'You are not aut...')
+#1 /var/www/yii/framework/web/filters/CFilter.php(39): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 /var/www/yii/framework/web/CController.php(1146): CFilter->filter(Object(CFilterChain))
+#3 /var/www/yii/framework/web/filters/CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#4 /var/www/yii/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#5 /var/www/yii/framework/web/CController.php(292): CFilterChain->run()
+#6 /var/www/yii/framework/web/CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 /var/www/yii/framework/web/CWebApplication.php(276): CController->run('omar')
+#8 /var/www/yii/framework/web/CWebApplication.php(135): CWebApplication->runController('LandMaster/omar')
+#9 /var/www/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#10 /var/www/testdrive/index.php(12): CApplication->run()
+#11 {main}
+REQUEST_URI=/testdrive/index.php/LandMaster/omar
+---
+2012/07/01 08:22:22 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not authorized to perform this action.' in /var/www/yii/framework/web/auth/CAccessControlFilter.php:157
+Stack trace:
+#0 /var/www/yii/framework/web/auth/CAccessControlFilter.php(120): CAccessControlFilter->accessDenied(Object(CWebUser), 'You are not aut...')
+#1 /var/www/yii/framework/web/filters/CFilter.php(39): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 /var/www/yii/framework/web/CController.php(1146): CFilter->filter(Object(CFilterChain))
+#3 /var/www/yii/framework/web/filters/CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#4 /var/www/yii/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#5 /var/www/yii/framework/web/CController.php(292): CFilterChain->run()
+#6 /var/www/yii/framework/web/CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 /var/www/yii/framework/web/CWebApplication.php(276): CController->run('omar')
+#8 /var/www/yii/framework/web/CWebApplication.php(135): CWebApplication->runController('LandMaster/omar')
+#9 /var/www/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#10 /var/www/testdrive/index.php(12): CApplication->run()
+#11 {main}
+REQUEST_URI=/testdrive/index.php/LandMaster/omar
+HTTP_REFERER=http://localhost/testdrive/index.php/site/login
+---
+2012/07/01 08:23:25 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "omar".' in /var/www/yii/framework/web/CWebApplication.php:280
+Stack trace:
+#0 /var/www/yii/framework/web/CWebApplication.php(135): CWebApplication->runController('omar')
+#1 /var/www/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#2 /var/www/testdrive/index.php(12): CApplication->run()
+#3 {main}
+REQUEST_URI=/testdrive/index.php/omar
+---
+2012/07/01 08:56:09 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not authorized to perform this action.' in /var/www/yii/framework/web/auth/CAccessControlFilter.php:157
+Stack trace:
+#0 /var/www/yii/framework/web/auth/CAccessControlFilter.php(120): CAccessControlFilter->accessDenied(Object(CWebUser), 'You are not aut...')
+#1 /var/www/yii/framework/web/filters/CFilter.php(39): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 /var/www/yii/framework/web/CController.php(1146): CFilter->filter(Object(CFilterChain))
+#3 /var/www/yii/framework/web/filters/CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#4 /var/www/yii/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#5 /var/www/yii/framework/web/CController.php(292): CFilterChain->run()
+#6 /var/www/yii/framework/web/CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 /var/www/yii/framework/web/CWebApplication.php(276): CController->run('admin')
+#8 /var/www/yii/framework/web/CWebApplication.php(135): CWebApplication->runController('deedDetails/adm...')
+#9 /var/www/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#10 /var/www/testdrive/index.php(12): CApplication->run()
+#11 {main}
+REQUEST_URI=/testdrive/index.php/deedDetails/admin
+HTTP_REFERER=http://localhost/testdrive/index.php/deedDetails/2
+---
+2012/07/01 08:56:15 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not authorized to perform this action.' in /var/www/yii/framework/web/auth/CAccessControlFilter.php:157
+Stack trace:
+#0 /var/www/yii/framework/web/auth/CAccessControlFilter.php(120): CAccessControlFilter->accessDenied(Object(CWebUser), 'You are not aut...')
+#1 /var/www/yii/framework/web/filters/CFilter.php(39): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 /var/www/yii/framework/web/CController.php(1146): CFilter->filter(Object(CFilterChain))
+#3 /var/www/yii/framework/web/filters/CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#4 /var/www/yii/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#5 /var/www/yii/framework/web/CController.php(292): CFilterChain->run()
+#6 /var/www/yii/framework/web/CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 /var/www/yii/framework/web/CWebApplication.php(276): CController->run('admin')
+#8 /var/www/yii/framework/web/CWebApplication.php(135): CWebApplication->runController('deedDetails/adm...')
+#9 /var/www/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#10 /var/www/testdrive/index.php(12): CApplication->run()
+#11 {main}
+REQUEST_URI=/testdrive/index.php/deedDetails/admin
+---
+2012/07/01 09:05:32 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not authorized to perform this action.' in /var/www/yii/framework/web/auth/CAccessControlFilter.php:157
+Stack trace:
+#0 /var/www/yii/framework/web/auth/CAccessControlFilter.php(120): CAccessControlFilter->accessDenied(Object(CWebUser), 'You are not aut...')
+#1 /var/www/yii/framework/web/filters/CFilter.php(39): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 /var/www/yii/framework/web/CController.php(1146): CFilter->filter(Object(CFilterChain))
+#3 /var/www/yii/framework/web/filters/CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#4 /var/www/yii/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#5 /var/www/yii/framework/web/CController.php(292): CFilterChain->run()
+#6 /var/www/yii/framework/web/CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 /var/www/yii/framework/web/CWebApplication.php(276): CController->run('admin')
+#8 /var/www/yii/framework/web/CWebApplication.php(135): CWebApplication->runController('deedDetails/adm...')
+#9 /var/www/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#10 /var/www/testdrive/index.php(12): CApplication->run()
+#11 {main}
+REQUEST_URI=/testdrive/index.php/deedDetails/admin
+HTTP_REFERER=http://localhost/testdrive/index.php/deedDetails/
+---
+2012/07/01 11:36:55 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "omar".' in /var/www/yii/framework/web/CController.php:484
+Stack trace:
+#0 /var/www/yii/framework/web/CController.php(271): CController->missingAction('omar')
+#1 /var/www/yii/framework/web/CWebApplication.php(276): CController->run('omar')
+#2 /var/www/yii/framework/web/CWebApplication.php(135): CWebApplication->runController('customerMaster/...')
+#3 /var/www/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#4 /var/www/testdrive/index.php(12): CApplication->run()
+#5 {main}
+REQUEST_URI=/testdrive/index.php/customerMaster/omar
+HTTP_REFERER=http://localhost/testdrive/index.php/customerMaster/admin
+---

@@ -4,17 +4,17 @@
  * This is the model class for table "MortgageMaster".
  *
  * The followings are the available columns in table 'MortgageMaster':
- * @property integer $id
- * @property integer $Land_ID
- * @property integer $CustomerID
+ * @property string $MortgageID
+ * @property string $Land_ID
+ * @property string $CustomerID
  * @property string $DateCreated
  * @property string $UserID
  * @property string $ApprovedBy
  *
  * The followings are the available model relations:
  * @property MortgageDetails[] $mortgageDetails
- * @property CustomerMaster $customer
  * @property LandMaster $land
+ * @property CustomerMaster $customer
  */
 class MortgageMaster extends CActiveRecord
 {
@@ -44,12 +44,12 @@ class MortgageMaster extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('id, Land_ID, CustomerID', 'numerical', 'integerOnly'=>true),
-			array('UserID, ApprovedBy', 'length', 'max'=>10),
-			array('DateCreated', 'safe'),
+			array('Land_ID, CustomerID, DateCreated, UserID, ApprovedBy', 'required'),
+			array('Land_ID, CustomerID', 'length', 'max'=>10),
+			array('UserID, ApprovedBy', 'length', 'max'=>15),
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
-			array('id, Land_ID, CustomerID, DateCreated, UserID, ApprovedBy', 'safe', 'on'=>'search'),
+			array('MortgageID, Land_ID, CustomerID, DateCreated, UserID, ApprovedBy', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -61,9 +61,9 @@ class MortgageMaster extends CActiveRecord
 		// NOTE: you may need to adjust the relation name and the related
 		// class name for the relations automatically generated below.
 		return array(
-			'mortgageDetails' => array(self::HAS_MANY, 'MortgageDetails', 'id'),
-			'customer' => array(self::BELONGS_TO, 'CustomerMaster', 'CustomerID'),
+			'mortgageDetails' => array(self::HAS_MANY, 'MortgageDetails', 'MortgageID'),
 			'land' => array(self::BELONGS_TO, 'LandMaster', 'Land_ID'),
+			'customer' => array(self::BELONGS_TO, 'CustomerMaster', 'CustomerID'),
 		);
 	}
 
@@ -73,7 +73,7 @@ class MortgageMaster extends CActiveRecord
 	public function attributeLabels()
 	{
 		return array(
-			'id' => 'ID',
+			'MortgageID' => 'Mortgage',
 			'Land_ID' => 'Land',
 			'CustomerID' => 'Customer',
 			'DateCreated' => 'Date Created',
@@ -93,9 +93,9 @@ class MortgageMaster extends CActiveRecord
 
 		$criteria=new CDbCriteria;
 
-		$criteria->compare('id',$this->id);
-		$criteria->compare('Land_ID',$this->Land_ID);
-		$criteria->compare('CustomerID',$this->CustomerID);
+		$criteria->compare('MortgageID',$this->MortgageID,true);
+		$criteria->compare('Land_ID',$this->Land_ID,true);
+		$criteria->compare('CustomerID',$this->CustomerID,true);
 		$criteria->compare('DateCreated',$this->DateCreated,true);
 		$criteria->compare('UserID',$this->UserID,true);
 		$criteria->compare('ApprovedBy',$this->ApprovedBy,true);

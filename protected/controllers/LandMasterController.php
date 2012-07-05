@@ -27,7 +27,7 @@ class LandMasterController extends Controller
 	{
 		return array(
 			array('allow',  // allow all users to perform 'index' and 'view' actions
-				'actions'=>array('index','view'),
+				'actions'=>array('index','view', 'omar'),
 				'users'=>array('*'),
 			),
 			array('allow', // allow authenticated user to perform 'create' and 'update' actions
@@ -49,30 +49,15 @@ class LandMasterController extends Controller
 	 * @param integer $id the ID of the model to be displayed
 	 */
 
-public function actionOmar()
-{
-    $model=new LandMaster;
+	public function actionOmar()
+	{
+		
+	    $model = new LandMaster;	   
+	    $this->render('omar', array('model'=>$model));
+	 
+	}
 
-    // uncomment the following code to enable ajax-based validation
-    /*
-    if(isset($_POST['ajax']) && $_POST['ajax']==='land-master-omar-form')
-    {
-        echo CActiveForm::validate($model);
-        Yii::app()->end();
-    }
-    */
 
-    if(isset($_POST['LandMaster']))
-    {
-        $model->attributes=$_POST['LandMaster'];
-        if($model->validate())
-        {
-            // form inputs are valid, do something here
-            return;
-        }
-    }
-    $this->render('omar',array('model'=>$model));
-}
 	public function actionView($id)
 	{
 		$this->render('view',array(

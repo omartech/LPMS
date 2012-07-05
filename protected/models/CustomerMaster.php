@@ -48,7 +48,7 @@ class CustomerMaster extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('CustomerNameArabic, CustomerNameEnglish, HomeAddress, HomePhone, MobilePhone, DateofBirth, Nationality, Signature', 'required'),
+			array('CustomerNameArabic, CustomerNameEnglish','required'),
 			array('CustomerNameArabic, CustomerNameEnglish', 'length', 'max'=>100),
 			array('HomeAddress', 'length', 'max'=>250),
 			array('HomePhone, MobilePhone', 'length', 'max'=>10),

@@ -28,7 +28,7 @@
 	<div id="mainmenu">
 		<?php $this->widget('zii.widgets.CMenu',array(
 			'items'=>array(
-				array('label'=>'ألصفحة أﻷساسية', 'url'=>array('/site/index')),
+				array('label'=>'Lands', 'url'=>array('/LandMaster/create')),
 				array('label'=>'من أنا', 'url'=>array('/site/page', 'view'=>'about')),
 				array('label'=>'راسل', 'url'=>array('/site/contact')),
 				array('label'=>'Login', 'url'=>array('/site/login'), 'visible'=>Yii::app()->user->isGuest),

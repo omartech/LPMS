@@ -10,6 +10,15 @@
 	<li>Layout file: <tt><?php echo $this->getLayoutFile('main'); ?></tt></li>
 </ul>
 
+<br>
+<?php 
+
+echo $this->id;
+echo $this->route;
+echo $this->layout;
+
+ ?>
+
 <p>For more details on how to further develop this application, please read
 the <a href="http://www.yiiframework.com/doc/">documentation</a>.
 Feel free to ask in the <a href="http://www.yiiframework.com/forum/">forum</a>,

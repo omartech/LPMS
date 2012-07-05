@@ -637,3 +637,343 @@ Stack trace:
 REQUEST_URI=/testdrive/index.php/customerMaster/omar
 HTTP_REFERER=http://localhost/testdrive/index.php/customerMaster/admin
 ---
+2012/07/02 10:09:10 [error] [php] Object of class SiteController could not be converted to string (/var/www/testdrive/protected/views/site/index.php:16)
+Stack trace:
+#0 /var/www/yii/framework/web/CController.php(870): SiteController->renderFile()
+#1 /var/www/yii/framework/web/CController.php(783): SiteController->renderPartial()
+#2 /var/www/testdrive/protected/controllers/SiteController.php(32): SiteController->render()
+#3 /var/www/yii/framework/web/actions/CInlineAction.php(50): SiteController->actionIndex()
+#4 /var/www/yii/framework/web/CController.php(309): CInlineAction->runWithParams()
+#5 /var/www/yii/framework/web/CController.php(287): SiteController->runAction()
+#6 /var/www/yii/framework/web/CController.php(266): SiteController->runActionWithFilters()
+#7 /var/www/yii/framework/web/CWebApplication.php(276): SiteController->run()
+#8 /var/www/yii/framework/web/CWebApplication.php(135): CWebApplication->runController()
+#9 /var/www/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#10 /var/www/testdrive/index.php(12): CWebApplication->run()
+REQUEST_URI=/testdrive/
+in /var/www/testdrive/protected/views/site/index.php (16)
+in /var/www/testdrive/protected/controllers/SiteController.php (32)
+in /var/www/testdrive/index.php (12)
+2012/07/02 16:31:59 [warning] [application] Failed to set unsafe attribute "DateofBirth" of "CustomerMaster".
+in /var/www/testdrive/protected/controllers/CustomerMasterController.php (71)
+in /var/www/testdrive/index.php (12)
+2012/07/02 16:31:59 [warning] [application] Failed to set unsafe attribute "Signature" of "CustomerMaster".
+in /var/www/testdrive/protected/controllers/CustomerMasterController.php (71)
+in /var/www/testdrive/index.php (12)
+2012/07/02 16:32:02 [warning] [application] Failed to set unsafe attribute "DateofBirth" of "CustomerMaster".
+in /var/www/testdrive/protected/controllers/CustomerMasterController.php (71)
+in /var/www/testdrive/index.php (12)
+2012/07/02 16:32:02 [warning] [application] Failed to set unsafe attribute "Signature" of "CustomerMaster".
+in /var/www/testdrive/protected/controllers/CustomerMasterController.php (71)
+in /var/www/testdrive/index.php (12)
+2012/07/02 16:32:23 [warning] [application] Failed to set unsafe attribute "DateofBirth" of "CustomerMaster".
+in /var/www/testdrive/protected/controllers/CustomerMasterController.php (71)
+in /var/www/testdrive/index.php (12)
+2012/07/02 16:32:23 [warning] [application] Failed to set unsafe attribute "Signature" of "CustomerMaster".
+in /var/www/testdrive/protected/controllers/CustomerMasterController.php (71)
+in /var/www/testdrive/index.php (12)
+2012/07/02 16:32:58 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "omar".' in /var/www/yii/framework/web/CController.php:484
+Stack trace:
+#0 /var/www/yii/framework/web/CController.php(271): CController->missingAction('omar')
+#1 /var/www/yii/framework/web/CWebApplication.php(276): CController->run('omar')
+#2 /var/www/yii/framework/web/CWebApplication.php(135): CWebApplication->runController('customerMaster/...')
+#3 /var/www/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#4 /var/www/testdrive/index.php(12): CApplication->run()
+#5 {main}
+REQUEST_URI=/testdrive/index.php/customerMaster/omar
+HTTP_REFERER=http://localhost/testdrive/index.php/customerMaster/admin
+---
+2012/07/04 09:59:15 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "abc".' in /var/www/yii/framework/web/CController.php:484
+Stack trace:
+#0 /var/www/yii/framework/web/CController.php(271): CController->missingAction('abc')
+#1 /var/www/yii/framework/web/CWebApplication.php(276): CController->run('abc')
+#2 /var/www/yii/framework/web/CWebApplication.php(135): CWebApplication->runController('LandMaster/abc/...')
+#3 /var/www/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#4 /var/www/testdrive/index.php(12): CApplication->run()
+#5 {main}
+REQUEST_URI=/testdrive/index.php/LandMaster/abc/create
+---
+2012/07/04 10:34:03 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not authorized to perform this action.' in /var/www/yii/framework/web/auth/CAccessControlFilter.php:157
+Stack trace:
+#0 /var/www/yii/framework/web/auth/CAccessControlFilter.php(120): CAccessControlFilter->accessDenied(Object(CWebUser), 'You are not aut...')
+#1 /var/www/yii/framework/web/filters/CFilter.php(39): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 /var/www/yii/framework/web/CController.php(1146): CFilter->filter(Object(CFilterChain))
+#3 /var/www/yii/framework/web/filters/CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#4 /var/www/yii/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#5 /var/www/yii/framework/web/CController.php(292): CFilterChain->run()
+#6 /var/www/yii/framework/web/CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 /var/www/yii/framework/web/CWebApplication.php(276): CController->run('omar')
+#8 /var/www/yii/framework/web/CWebApplication.php(135): CWebApplication->runController('landMaster/omar')
+#9 /var/www/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#10 /var/www/testdrive/index.php(12): CApplication->run()
+#11 {main}
+REQUEST_URI=/testdrive/index.php/landMaster/omar
+---
+2012/07/04 10:34:50 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not authorized to perform this action.' in /var/www/yii/framework/web/auth/CAccessControlFilter.php:157
+Stack trace:
+#0 /var/www/yii/framework/web/auth/CAccessControlFilter.php(120): CAccessControlFilter->accessDenied(Object(CWebUser), 'You are not aut...')
+#1 /var/www/yii/framework/web/filters/CFilter.php(39): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 /var/www/yii/framework/web/CController.php(1146): CFilter->filter(Object(CFilterChain))
+#3 /var/www/yii/framework/web/filters/CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#4 /var/www/yii/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#5 /var/www/yii/framework/web/CController.php(292): CFilterChain->run()
+#6 /var/www/yii/framework/web/CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 /var/www/yii/framework/web/CWebApplication.php(276): CController->run('omar')
+#8 /var/www/yii/framework/web/CWebApplication.php(135): CWebApplication->runController('landMaster/omar')
+#9 /var/www/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#10 /var/www/testdrive/index.php(12): CApplication->run()
+#11 {main}
+REQUEST_URI=/testdrive/index.php/landMaster/omar
+---
+2012/07/04 10:34:51 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not authorized to perform this action.' in /var/www/yii/framework/web/auth/CAccessControlFilter.php:157
+Stack trace:
+#0 /var/www/yii/framework/web/auth/CAccessControlFilter.php(120): CAccessControlFilter->accessDenied(Object(CWebUser), 'You are not aut...')
+#1 /var/www/yii/framework/web/filters/CFilter.php(39): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 /var/www/yii/framework/web/CController.php(1146): CFilter->filter(Object(CFilterChain))
+#3 /var/www/yii/framework/web/filters/CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#4 /var/www/yii/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#5 /var/www/yii/framework/web/CController.php(292): CFilterChain->run()
+#6 /var/www/yii/framework/web/CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 /var/www/yii/framework/web/CWebApplication.php(276): CController->run('omar')
+#8 /var/www/yii/framework/web/CWebApplication.php(135): CWebApplication->runController('landMaster/omar')
+#9 /var/www/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#10 /var/www/testdrive/index.php(12): CApplication->run()
+#11 {main}
+REQUEST_URI=/testdrive/index.php/landMaster/omar
+---
+2012/07/04 10:35:29 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not authorized to perform this action.' in /var/www/yii/framework/web/auth/CAccessControlFilter.php:157
+Stack trace:
+#0 /var/www/yii/framework/web/auth/CAccessControlFilter.php(120): CAccessControlFilter->accessDenied(Object(CWebUser), 'You are not aut...')
+#1 /var/www/yii/framework/web/filters/CFilter.php(39): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 /var/www/yii/framework/web/CController.php(1146): CFilter->filter(Object(CFilterChain))
+#3 /var/www/yii/framework/web/filters/CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#4 /var/www/yii/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#5 /var/www/yii/framework/web/CController.php(292): CFilterChain->run()
+#6 /var/www/yii/framework/web/CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 /var/www/yii/framework/web/CWebApplication.php(276): CController->run('omar')
+#8 /var/www/yii/framework/web/CWebApplication.php(135): CWebApplication->runController('landMaster/omar')
+#9 /var/www/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#10 /var/www/testdrive/index.php(12): CApplication->run()
+#11 {main}
+REQUEST_URI=/testdrive/index.php/landMaster/omar
+---
+2012/07/04 10:35:36 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not authorized to perform this action.' in /var/www/yii/framework/web/auth/CAccessControlFilter.php:157
+Stack trace:
+#0 /var/www/yii/framework/web/auth/CAccessControlFilter.php(120): CAccessControlFilter->accessDenied(Object(CWebUser), 'You are not aut...')
+#1 /var/www/yii/framework/web/filters/CFilter.php(39): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 /var/www/yii/framework/web/CController.php(1146): CFilter->filter(Object(CFilterChain))
+#3 /var/www/yii/framework/web/filters/CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#4 /var/www/yii/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#5 /var/www/yii/framework/web/CController.php(292): CFilterChain->run()
+#6 /var/www/yii/framework/web/CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 /var/www/yii/framework/web/CWebApplication.php(276): CController->run('omar')
+#8 /var/www/yii/framework/web/CWebApplication.php(135): CWebApplication->runController('landMaster/omar')
+#9 /var/www/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#10 /var/www/testdrive/index.php(12): CApplication->run()
+#11 {main}
+REQUEST_URI=/testdrive/index.php/landMaster/omar
+---
+2012/07/04 10:40:34 [error] [php] Object of class CInlineAction could not be converted to string (/var/www/testdrive/protected/views/landMaster/omar.php:2)
+Stack trace:
+#0 /var/www/yii/framework/web/CController.php(870): LandMasterController->renderFile()
+#1 /var/www/yii/framework/web/CController.php(783): LandMasterController->renderPartial()
+#2 /var/www/testdrive/protected/controllers/LandMasterController.php(54): LandMasterController->render()
+#3 /var/www/yii/framework/web/actions/CInlineAction.php(50): LandMasterController->actionOmar()
+#4 /var/www/yii/framework/web/CController.php(309): CInlineAction->runWithParams()
+#5 /var/www/yii/framework/web/filters/CFilterChain.php(134): LandMasterController->runAction()
+#6 /var/www/yii/framework/web/filters/CFilter.php(41): CFilterChain->run()
+#7 /var/www/yii/framework/web/CController.php(1146): CAccessControlFilter->filter()
+#8 /var/www/yii/framework/web/filters/CInlineFilter.php(59): LandMasterController->filterAccessControl()
+#9 /var/www/yii/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter()
+#10 /var/www/yii/framework/web/CController.php(292): CFilterChain->run()
+#11 /var/www/yii/framework/web/CController.php(266): LandMasterController->runActionWithFilters()
+#12 /var/www/yii/framework/web/CWebApplication.php(276): LandMasterController->run()
+#13 /var/www/yii/framework/web/CWebApplication.php(135): CWebApplication->runController()
+#14 /var/www/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#15 /var/www/testdrive/index.php(12): CWebApplication->run()
+REQUEST_URI=/testdrive/index.php/landMaster/omar
+in /var/www/testdrive/protected/views/landMaster/omar.php (2)
+in /var/www/testdrive/protected/controllers/LandMasterController.php (54)
+in /var/www/testdrive/index.php (12)
+2012/07/04 10:49:41 [error] [exception.CException] exception 'CException' with message 'CMaskedTextField must specify "model" and "attribute" or "name" property values.' in /var/www/yii/framework/web/widgets/CInputWidget.php:61
+Stack trace:
+#0 /var/www/yii/framework/web/widgets/CMaskedTextField.php(62): CInputWidget->resolveNameID()
+#1 /var/www/yii/framework/web/CBaseController.php(174): CMaskedTextField->run()
+#2 /var/www/testdrive/protected/views/landMaster/omar.php(6): CBaseController->widget('CMaskedTextFiel...', Array)
+#3 /var/www/yii/framework/web/CBaseController.php(127): require('/var/www/testdr...')
+#4 /var/www/yii/framework/web/CBaseController.php(96): CBaseController->renderInternal('/var/www/testdr...', NULL, true)
+#5 /var/www/yii/framework/web/CController.php(870): CBaseController->renderFile('/var/www/testdr...', NULL, true)
+#6 /var/www/yii/framework/web/CController.php(783): CController->renderPartial('omar', NULL, true)
+#7 /var/www/testdrive/protected/controllers/LandMasterController.php(55): CController->render('omar')
+#8 /var/www/yii/framework/web/actions/CInlineAction.php(50): LandMasterController->actionOmar()
+#9 /var/www/yii/framework/web/CController.php(309): CInlineAction->runWithParams(Array)
+#10 /var/www/yii/framework/web/filters/CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#11 /var/www/yii/framework/web/filters/CFilter.php(41): CFilterChain->run()
+#12 /var/www/yii/framework/web/CController.php(1146): CFilter->filter(Object(CFilterChain))
+#13 /var/www/yii/framework/web/filters/CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#14 /var/www/yii/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#15 /var/www/yii/framework/web/CController.php(292): CFilterChain->run()
+#16 /var/www/yii/framework/web/CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#17 /var/www/yii/framework/web/CWebApplication.php(276): CController->run('omar')
+#18 /var/www/yii/framework/web/CWebApplication.php(135): CWebApplication->runController('landMaster/omar')
+#19 /var/www/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#20 /var/www/testdrive/index.php(12): CApplication->run()
+#21 {main}
+REQUEST_URI=/testdrive/index.php/landMaster/omar
+---
+2012/07/04 10:51:15 [error] [php] Undefined variable: model (/var/www/testdrive/protected/views/landMaster/omar.php:5)
+Stack trace:
+#0 /var/www/yii/framework/web/CController.php(870): LandMasterController->renderFile()
+#1 /var/www/yii/framework/web/CController.php(783): LandMasterController->renderPartial()
+#2 /var/www/testdrive/protected/controllers/LandMasterController.php(55): LandMasterController->render()
+#3 /var/www/yii/framework/web/actions/CInlineAction.php(50): LandMasterController->actionOmar()
+#4 /var/www/yii/framework/web/CController.php(309): CInlineAction->runWithParams()
+#5 /var/www/yii/framework/web/filters/CFilterChain.php(134): LandMasterController->runAction()
+#6 /var/www/yii/framework/web/filters/CFilter.php(41): CFilterChain->run()
+#7 /var/www/yii/framework/web/CController.php(1146): CAccessControlFilter->filter()
+#8 /var/www/yii/framework/web/filters/CInlineFilter.php(59): LandMasterController->filterAccessControl()
+#9 /var/www/yii/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter()
+#10 /var/www/yii/framework/web/CController.php(292): CFilterChain->run()
+#11 /var/www/yii/framework/web/CController.php(266): LandMasterController->runActionWithFilters()
+#12 /var/www/yii/framework/web/CWebApplication.php(276): LandMasterController->run()
+#13 /var/www/yii/framework/web/CWebApplication.php(135): CWebApplication->runController()
+#14 /var/www/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#15 /var/www/testdrive/index.php(12): CWebApplication->run()
+REQUEST_URI=/testdrive/index.php/landMaster/omar
+in /var/www/testdrive/protected/views/landMaster/omar.php (5)
+in /var/www/testdrive/protected/controllers/LandMasterController.php (55)
+in /var/www/testdrive/index.php (12)
+2012/07/04 10:52:14 [error] [php] Undefined variable: model (/var/www/testdrive/protected/views/landMaster/omar.php:5)
+Stack trace:
+#0 /var/www/yii/framework/web/CController.php(870): LandMasterController->renderFile()
+#1 /var/www/yii/framework/web/CController.php(783): LandMasterController->renderPartial()
+#2 /var/www/testdrive/protected/controllers/LandMasterController.php(56): LandMasterController->render()
+#3 /var/www/yii/framework/web/actions/CInlineAction.php(50): LandMasterController->actionOmar()
+#4 /var/www/yii/framework/web/CController.php(309): CInlineAction->runWithParams()
+#5 /var/www/yii/framework/web/filters/CFilterChain.php(134): LandMasterController->runAction()
+#6 /var/www/yii/framework/web/filters/CFilter.php(41): CFilterChain->run()
+#7 /var/www/yii/framework/web/CController.php(1146): CAccessControlFilter->filter()
+#8 /var/www/yii/framework/web/filters/CInlineFilter.php(59): LandMasterController->filterAccessControl()
+#9 /var/www/yii/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter()
+#10 /var/www/yii/framework/web/CController.php(292): CFilterChain->run()
+#11 /var/www/yii/framework/web/CController.php(266): LandMasterController->runActionWithFilters()
+#12 /var/www/yii/framework/web/CWebApplication.php(276): LandMasterController->run()
+#13 /var/www/yii/framework/web/CWebApplication.php(135): CWebApplication->runController()
+#14 /var/www/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#15 /var/www/testdrive/index.php(12): CWebApplication->run()
+REQUEST_URI=/testdrive/index.php/landMaster/omar
+in /var/www/testdrive/protected/views/landMaster/omar.php (5)
+in /var/www/testdrive/protected/controllers/LandMasterController.php (56)
+in /var/www/testdrive/index.php (12)
+2012/07/04 10:52:15 [error] [php] Undefined variable: model (/var/www/testdrive/protected/views/landMaster/omar.php:5)
+Stack trace:
+#0 /var/www/yii/framework/web/CController.php(870): LandMasterController->renderFile()
+#1 /var/www/yii/framework/web/CController.php(783): LandMasterController->renderPartial()
+#2 /var/www/testdrive/protected/controllers/LandMasterController.php(56): LandMasterController->render()
+#3 /var/www/yii/framework/web/actions/CInlineAction.php(50): LandMasterController->actionOmar()
+#4 /var/www/yii/framework/web/CController.php(309): CInlineAction->runWithParams()
+#5 /var/www/yii/framework/web/filters/CFilterChain.php(134): LandMasterController->runAction()
+#6 /var/www/yii/framework/web/filters/CFilter.php(41): CFilterChain->run()
+#7 /var/www/yii/framework/web/CController.php(1146): CAccessControlFilter->filter()
+#8 /var/www/yii/framework/web/filters/CInlineFilter.php(59): LandMasterController->filterAccessControl()
+#9 /var/www/yii/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter()
+#10 /var/www/yii/framework/web/CController.php(292): CFilterChain->run()
+#11 /var/www/yii/framework/web/CController.php(266): LandMasterController->runActionWithFilters()
+#12 /var/www/yii/framework/web/CWebApplication.php(276): LandMasterController->run()
+#13 /var/www/yii/framework/web/CWebApplication.php(135): CWebApplication->runController()
+#14 /var/www/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#15 /var/www/testdrive/index.php(12): CWebApplication->run()
+REQUEST_URI=/testdrive/index.php/landMaster/omar
+in /var/www/testdrive/protected/views/landMaster/omar.php (5)
+in /var/www/testdrive/protected/controllers/LandMasterController.php (56)
+in /var/www/testdrive/index.php (12)
+2012/07/04 10:52:50 [error] [exception.CException] exception 'CException' with message 'Property "LandMaster.aluguel" is not defined.' in /var/www/yii/framework/base/CComponent.php:131
+Stack trace:
+#0 /var/www/yii/framework/db/ar/CActiveRecord.php(144): CComponent->__get('aluguel')
+#1 /var/www/yii/framework/web/helpers/CHtml.php(2044): CActiveRecord->__get('aluguel')
+#2 /var/www/yii/framework/web/helpers/CHtml.php(1774): CHtml::resolveValue(Object(LandMaster), 'aluguel')
+#3 /var/www/yii/framework/web/helpers/CHtml.php(1205): CHtml::activeInputField('text', Object(LandMaster), 'aluguel', Array)
+#4 /var/www/yii/framework/web/widgets/CMaskedTextField.php(73): CHtml::activeTextField(Object(LandMaster), 'aluguel', Array)
+#5 /var/www/yii/framework/web/CBaseController.php(174): CMaskedTextField->run()
+#6 /var/www/testdrive/protected/views/landMaster/omar.php(9): CBaseController->widget('CMaskedTextFiel...', Array)
+#7 /var/www/yii/framework/web/CBaseController.php(127): require('/var/www/testdr...')
+#8 /var/www/yii/framework/web/CBaseController.php(96): CBaseController->renderInternal('/var/www/testdr...', Array, true)
+#9 /var/www/yii/framework/web/CController.php(870): CBaseController->renderFile('/var/www/testdr...', Array, true)
+#10 /var/www/yii/framework/web/CController.php(783): CController->renderPartial('omar', Array, true)
+#11 /var/www/testdrive/protected/controllers/LandMasterController.php(56): CController->render('omar', Array)
+#12 /var/www/yii/framework/web/actions/CInlineAction.php(50): LandMasterController->actionOmar()
+#13 /var/www/yii/framework/web/CController.php(309): CInlineAction->runWithParams(Array)
+#14 /var/www/yii/framework/web/filters/CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#15 /var/www/yii/framework/web/filters/CFilter.php(41): CFilterChain->run()
+#16 /var/www/yii/framework/web/CController.php(1146): CFilter->filter(Object(CFilterChain))
+#17 /var/www/yii/framework/web/filters/CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#18 /var/www/yii/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#19 /var/www/yii/framework/web/CController.php(292): CFilterChain->run()
+#20 /var/www/yii/framework/web/CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#21 /var/www/yii/framework/web/CWebApplication.php(276): CController->run('omar')
+#22 /var/www/yii/framework/web/CWebApplication.php(135): CWebApplication->runController('landMaster/omar')
+#23 /var/www/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#24 /var/www/testdrive/index.php(12): CApplication->run()
+#25 {main}
+REQUEST_URI=/testdrive/index.php/landMaster/omar
+---
+2012/07/04 10:53:25 [error] [exception.CException] exception 'CException' with message 'Property "LandMaster.LandID" is not defined.' in /var/www/yii/framework/base/CComponent.php:131
+Stack trace:
+#0 /var/www/yii/framework/db/ar/CActiveRecord.php(144): CComponent->__get('LandID')
+#1 /var/www/yii/framework/web/helpers/CHtml.php(2044): CActiveRecord->__get('LandID')
+#2 /var/www/yii/framework/web/helpers/CHtml.php(1774): CHtml::resolveValue(Object(LandMaster), 'LandID')
+#3 /var/www/yii/framework/web/helpers/CHtml.php(1205): CHtml::activeInputField('text', Object(LandMaster), 'LandID', Array)
+#4 /var/www/yii/framework/web/widgets/CMaskedTextField.php(73): CHtml::activeTextField(Object(LandMaster), 'LandID', Array)
+#5 /var/www/yii/framework/web/CBaseController.php(174): CMaskedTextField->run()
+#6 /var/www/testdrive/protected/views/landMaster/omar.php(9): CBaseController->widget('CMaskedTextFiel...', Array)
+#7 /var/www/yii/framework/web/CBaseController.php(127): require('/var/www/testdr...')
+#8 /var/www/yii/framework/web/CBaseController.php(96): CBaseController->renderInternal('/var/www/testdr...', Array, true)
+#9 /var/www/yii/framework/web/CController.php(870): CBaseController->renderFile('/var/www/testdr...', Array, true)
+#10 /var/www/yii/framework/web/CController.php(783): CController->renderPartial('omar', Array, true)
+#11 /var/www/testdrive/protected/controllers/LandMasterController.php(56): CController->render('omar', Array)
+#12 /var/www/yii/framework/web/actions/CInlineAction.php(50): LandMasterController->actionOmar()
+#13 /var/www/yii/framework/web/CController.php(309): CInlineAction->runWithParams(Array)
+#14 /var/www/yii/framework/web/filters/CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#15 /var/www/yii/framework/web/filters/CFilter.php(41): CFilterChain->run()
+#16 /var/www/yii/framework/web/CController.php(1146): CFilter->filter(Object(CFilterChain))
+#17 /var/www/yii/framework/web/filters/CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#18 /var/www/yii/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#19 /var/www/yii/framework/web/CController.php(292): CFilterChain->run()
+#20 /var/www/yii/framework/web/CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#21 /var/www/yii/framework/web/CWebApplication.php(276): CController->run('omar')
+#22 /var/www/yii/framework/web/CWebApplication.php(135): CWebApplication->runController('landMaster/omar')
+#23 /var/www/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#24 /var/www/testdrive/index.php(12): CApplication->run()
+#25 {main}
+REQUEST_URI=/testdrive/index.php/landMaster/omar
+---
+2012/07/04 10:53:32 [error] [exception.CException] exception 'CException' with message 'Property "LandMaster.type" is not defined.' in /var/www/yii/framework/base/CComponent.php:131
+Stack trace:
+#0 /var/www/yii/framework/db/ar/CActiveRecord.php(144): CComponent->__get('type')
+#1 /var/www/yii/framework/web/helpers/CHtml.php(2044): CActiveRecord->__get('type')
+#2 /var/www/yii/framework/web/helpers/CHtml.php(1774): CHtml::resolveValue(Object(LandMaster), 'type')
+#3 /var/www/yii/framework/web/helpers/CHtml.php(1205): CHtml::activeInputField('text', Object(LandMaster), 'type', Array)
+#4 /var/www/yii/framework/web/widgets/CMaskedTextField.php(73): CHtml::activeTextField(Object(LandMaster), 'type', Array)
+#5 /var/www/yii/framework/web/CBaseController.php(174): CMaskedTextField->run()
+#6 /var/www/testdrive/protected/views/landMaster/omar.php(9): CBaseController->widget('CMaskedTextFiel...', Array)
+#7 /var/www/yii/framework/web/CBaseController.php(127): require('/var/www/testdr...')
+#8 /var/www/yii/framework/web/CBaseController.php(96): CBaseController->renderInternal('/var/www/testdr...', Array, true)
+#9 /var/www/yii/framework/web/CController.php(870): CBaseController->renderFile('/var/www/testdr...', Array, true)
+#10 /var/www/yii/framework/web/CController.php(783): CController->renderPartial('omar', Array, true)
+#11 /var/www/testdrive/protected/controllers/LandMasterController.php(56): CController->render('omar', Array)
+#12 /var/www/yii/framework/web/actions/CInlineAction.php(50): LandMasterController->actionOmar()
+#13 /var/www/yii/framework/web/CController.php(309): CInlineAction->runWithParams(Array)
+#14 /var/www/yii/framework/web/filters/CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#15 /var/www/yii/framework/web/filters/CFilter.php(41): CFilterChain->run()
+#16 /var/www/yii/framework/web/CController.php(1146): CFilter->filter(Object(CFilterChain))
+#17 /var/www/yii/framework/web/filters/CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#18 /var/www/yii/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#19 /var/www/yii/framework/web/CController.php(292): CFilterChain->run()
+#20 /var/www/yii/framework/web/CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#21 /var/www/yii/framework/web/CWebApplication.php(276): CController->run('omar')
+#22 /var/www/yii/framework/web/CWebApplication.php(135): CWebApplication->runController('landMaster/omar')
+#23 /var/www/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#24 /var/www/testdrive/index.php(12): CApplication->run()
+#25 {main}
+REQUEST_URI=/testdrive/index.php/landMaster/omar
+---

@@ -977,3 +977,19 @@ Stack trace:
 #25 {main}
 REQUEST_URI=/testdrive/index.php/landMaster/omar
 ---
+2012/07/17 13:25:01 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "landmaster".' in /var/www/yii/framework/web/CWebApplication.php:280
+Stack trace:
+#0 /var/www/yii/framework/web/CWebApplication.php(135): CWebApplication->runController('landmaster')
+#1 /var/www/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#2 /var/www/testdrive/index.php(12): CApplication->run()
+#3 {main}
+REQUEST_URI=/testdrive/index.php/landmaster
+---
+2012/07/17 13:25:06 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "landmaster/create".' in /var/www/yii/framework/web/CWebApplication.php:280
+Stack trace:
+#0 /var/www/yii/framework/web/CWebApplication.php(135): CWebApplication->runController('landmaster/crea...')
+#1 /var/www/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#2 /var/www/testdrive/index.php(12): CApplication->run()
+#3 {main}
+REQUEST_URI=/testdrive/index.php/landmaster/create
+---
